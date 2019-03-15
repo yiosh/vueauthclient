@@ -7,6 +7,8 @@
 
 <script>
 import axios from "axios";
+import router from "@/router";
+
 export default {
   name: "Login",
   data: () => ({
@@ -27,7 +29,7 @@ export default {
         })
         .catch(errors => {
           console.log(errors);
-          this.$router.push("/");
+          router.push("/");
         });
     }
   }
