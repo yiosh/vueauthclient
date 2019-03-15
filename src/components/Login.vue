@@ -13,6 +13,7 @@
 
 <script>
 import axios from "axios";
+import router from "@/router";
 export default {
   name: "Login",
   methods: {
@@ -24,11 +25,12 @@ export default {
           email: email,
           password: password
         };
+
         axios
           .post("/api/login", data)
           .then(response => {
             console.log("Logged in");
-            this.$router.push("/dashboard");
+            router.push("/dashboard");
           })
           .catch(errors => {
             console.log("Cannot log in");
